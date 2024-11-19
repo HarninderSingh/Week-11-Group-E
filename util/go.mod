@@ -1,3 +1,3 @@
-module week11/util
+module week11
 
-go 1.23.3
+go 1.23.1
