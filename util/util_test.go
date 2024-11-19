@@ -86,3 +86,14 @@ func TestSumOfSlice(t *testing.T) {
 		})
 	}
 }
+
+// Benchmark SumOfSlice
+func BenchmarkSumOfSlice(b *testing.B) {
+	slice := make([]int, 1000)
+	for i := range slice {
+		slice[i] = i
+	}
+	for i := 0; i < b.N; i++ {
+		SumOfSlice(slice)
+	}
+}
