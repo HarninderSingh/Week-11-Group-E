@@ -63,3 +63,26 @@ func BenchmarkReverseString(b *testing.B) {
 		ReverseString("Benchmarking")
 	}
 }
+
+// TestSumOfSlice with edge cases
+func TestSumOfSlice(t *testing.T) {
+	tests := []struct {
+		name     string
+		input    []int
+		expected int
+	}{
+		{"Empty slice", []int{}, 0},
+		{"Single element", []int{5}, 5},
+		{"Multiple elements", []int{1, 2, 3, 4}, 10},
+		{"Negative numbers", []int{-1, -2, -3}, -6},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			result := SumOfSlice(tt.input)
+			if result != tt.expected {
+				t.Errorf("expected %d, got %d", tt.expected, result)
+			}
+		})
+	}
+}
