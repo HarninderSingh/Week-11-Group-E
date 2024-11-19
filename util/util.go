@@ -22,9 +22,11 @@ func ReverseString(s string) string {
 	return string(runes)
 }
 
-// Benchmark ReverseString
-func BenchmarkReverseString(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		ReverseString("Benchmarking")
+// SumOfSlice returns the sum of all integers in the slice
+func SumOfSlice(slice []int) int {
+	sum := 0
+	for _, v := range slice {
+		sum += v
 	}
+	return sum
 }
